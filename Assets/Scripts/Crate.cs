@@ -17,6 +17,7 @@ public class Crate : MonoBehaviour
 
     void Update()
     {
+        fallSpeed = GameManager.Instance.crateFallSpeed;
         // Move down
         transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
 
@@ -36,13 +37,13 @@ public class Crate : MonoBehaviour
         if (crateValue == 0)
         {
             GameManager.Instance.AddScore(10);
-            GameManager.Instance.cratesLeft--;
+            GameManager.Instance.CrateDestroyed();
             Destroy(gameObject);
         }
         else if (crateValue < 0)
         {
-            GameManager.Instance.AddScore(5);
-            GameManager.Instance.cratesLeft--;
+            GameManager.Instance.AddScore(-5);
+            GameManager.Instance.CrateDestroyed();
             Destroy(gameObject);
         }
 

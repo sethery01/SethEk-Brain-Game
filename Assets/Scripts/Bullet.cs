@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public int bulletNumber;
     
     // Speed of the bullet
-    public float speed = 8f;
+    public float speed = 12f;
 
     // Update is called once per frame
     void Update()

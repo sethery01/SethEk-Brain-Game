@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class CrateSpawner : MonoBehaviour
 {
-    public GameObject cratePrefab;  
-    public float spawnInterval = 2f;
+    public GameObject cratePrefab;
+    public float spawnInterval = 3f;
     public float spawnRangeX = 8f;
     private float timer = 0f;
 
     void Update()
     {
+        if (!GameManager.Instance.levelActive)
+            return;
+        if (GameManager.Instance.cratesLeft <= 0)
+            return;
+
         timer += Time.deltaTime;
+        spawnInterval = GameManager.Instance.crateSpawnInterval; // Adjust spawn rate based on fall speed
         if (timer >= spawnInterval)
         {
             SpawnCrate();   // Spawn a new crate every interval
