@@ -13,13 +13,16 @@ public class Cannon : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             Shoot(1);
+            GameManager.Instance.FireShot(1);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
+            GameManager.Instance.FireShot(2);
             Shoot(2);
         }
         else if (Input.GetKeyDown(KeyCode.F))
         {
+            GameManager.Instance.FireShot(3);
             Shoot(3);
         }
     }

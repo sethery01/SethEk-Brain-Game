@@ -23,7 +23,7 @@ public class Crate : MonoBehaviour
         // Destroy if off screen
         if (transform.position.y < -6f)
         {
-            // GameManager.Instance.MissedCrate(); 
+            GameManager.Instance.AddScore(-10); 
             Destroy(gameObject);
         }
     }
@@ -32,17 +32,20 @@ public class Crate : MonoBehaviour
     {
         crateValue -= damage;
         UpdateCrateText();
-        
+
         if (crateValue == 0)
         {
-            // GameManager.Instance.AddScore(10);
+            GameManager.Instance.AddScore(10);
+            GameManager.Instance.cratesLeft--;
             Destroy(gameObject);
         }
         else if (crateValue < 0)
         {
-            // GameManager.Instance.AddScore(-5);
+            GameManager.Instance.AddScore(5);
+            GameManager.Instance.cratesLeft--;
             Destroy(gameObject);
         }
+
     }
 
     void UpdateCrateText()
