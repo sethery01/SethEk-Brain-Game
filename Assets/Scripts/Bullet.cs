@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Crate"))
         {
             // Access the Crate script on the hit object
-            Crate crate = collision.gameObject.GetComponent<Crate>();
+            Crate crate = collision.gameObject.GetComponentInParent<Crate>();
             if (crate != null)
             {
                 crate.TakeDamage(bulletNumber);

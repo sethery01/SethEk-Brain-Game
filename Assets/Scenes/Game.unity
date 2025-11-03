@@ -665,7 +665,11 @@ PrefabInstance:
       value: Directions (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8397495179590476552, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
+    - {fileID: 6519365566872240298, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
+    - {fileID: 9178465153493645941, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
+    - {fileID: 7795741129308009417, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 951599860419305990, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
@@ -782,6 +786,7 @@ MonoBehaviour:
   timerText: {fileID: 1679228153}
   cratesText: {fileID: 946258287}
   levelText: {fileID: 1172980604}
+  highScore: 0
   score: 0
   ammo1: 50
   ammo2: 50
@@ -1019,7 +1024,11 @@ PrefabInstance:
       value: Directions
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7795741129308009417, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
+    - {fileID: 9178465153493645941, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
+    - {fileID: 6519365566872240298, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
+    - {fileID: 8397495179590476552, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 951599860419305990, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
@@ -1868,7 +1877,11 @@ PrefabInstance:
       value: Directions (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8397495179590476552, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
+    - {fileID: 6519365566872240298, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
+    - {fileID: 9178465153493645941, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
+    - {fileID: 7795741129308009417, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 951599860419305990, guid: f539345e92ec14d6790d535d2bc20dc5, type: 3}

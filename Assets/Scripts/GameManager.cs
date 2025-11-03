@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI cratesText;
     public TextMeshProUGUI levelText;
+    public int highScore = 0;
+    // public TextMeshProUGUI highScoreText; 
+
 
     [Header("Game Settings")]
     public int score = 0;
@@ -42,6 +46,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         // timeRemaining = levelTime;
+        highScore = PlayerPrefs.GetInt("HighScore", 0);
         InitLevel(1);
     }
 
@@ -115,6 +120,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 Debug.Log("All levels complete! Final Score: " + score);
+                EndGame();
             }
         }
         else
@@ -138,6 +144,12 @@ public class GameManager : MonoBehaviour
     {
         score += value;
         if (score < 0) score = 0;
+        if (score > highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt("HighScore", highScore);
+            PlayerPrefs.Save();
+        }
         UpdateUI();
     }
 
@@ -179,6 +191,8 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
-        Debug.Log("Game Over! Final Score: " + score);
+        PlayerPrefs.SetInt("LastScore", score);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("GameOver");
     }
 }
